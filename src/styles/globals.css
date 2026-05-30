@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+:root {
+--n7-dark: #0A0B14;
+--n7-dark2: #0D1020;
+--n7-blue: #00B4FF;
+--n7-blue2: #0066FF;
+--n7-navy: #1A2040;
+--n7-light: #F9FAFC;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+background-color: var(--n7-dark);
+color: #ffffff;
+font-family: 'Inter', sans-serif;
+-webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+font-family: 'Syne', sans-serif;
+}
+
+/* ---- Ticker ---- */
+@keyframes ticker {
+0% { transform: translateX(0); }
+100% { transform: translateX(-50%); }
+}
+
+.ticker-track {
+animation: ticker 22s linear infinite;
+}
+
+/* ---- Fade In ---- */
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(28px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.fade-in {
+animation: fadeInUp .7s ease forwards;
+}
+
+.delay-1 {
+animation-delay: .15s;
+opacity: 0;
+}
+
+.delay-2 {
+animation-delay: .3s;
+opacity: 0;
+}
+
+.delay-3 {
+animation-delay: .45s;
+opacity: 0;
+}
+
+/* ---- Phone ---- */
+.phone-mockup {
+border-radius: 40px;
+border: 8px solid #1a1a2e;
+box-shadow: 0 24px 80px rgba(0,0,0,.6),
+inset 0 0 0 1px rgba(255,255,255,.06);
+background: #F9FAFC;
+overflow: hidden;
+position: relative;
+width: 200px;
+height: 432px;
+display: flex;
+flex-direction: column;
+}
+
+.phone-mockup::before {
+content: '';
+position: absolute;
+top: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 100px;
+height: 24px;
+background: #1a1a2e;
+border-radius: 0 0 16px 16px;
+z-index: 10;
+}
+
+/* ---- Dashboard ---- */
+.dashboard-card {
+background: #fff;
+border-radius: 16px;
+overflow: hidden;
+box-shadow: 0 20px 60px rgba(0,0,0,.5);
+}
+
+/* ===================================== */
+/* SOLUTIONS SECTION */
+/* ===================================== */
+
+.solutions-wrapper {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: 120px;
+}
+
+.solutions-left {
+width: 35%;
+}
+
+.solutions-right {
+width: 65%;
+}
+
+.solutions-grid {
+display: grid;
+grid-template-columns: repeat(2, 320px);
+column-gap: 100px;
+row-gap: 80px;
+}
+
+.solution-card {
+text-decoration: none;
+background: transparent;
+border: none;
+padding: 0;
+display: block;
+}
+
+.solution-icon {
+font-size: 28px;
+color: rgba(255,255,255,.4);
+margin-bottom: 20px;
+}
+
+.solution-title {
+color: #ffffff;
+font-size: 22px;
+font-weight: 600;
+margin-bottom: 14px;
+}
+
+.solution-desc {
+color: rgba(255,255,255,.5);
+font-size: 14px;
+line-height: 1.8;
+margin-bottom: 18px;
+}
+
+.solution-link {
+color: #00B4FF;
+font-size: 12px;
+font-weight: 700;
+letter-spacing: 1px;
+}
+
+/* ---- Navigation ---- */
+.nav-link {
+position: relative;
+transition: color .2s;
+}
+
+.nav-link::after {
+content: '';
+position: absolute;
+bottom: -2px;
+left: 0;
+width: 0;
+height: 1px;
+background: var(--n7-blue);
+transition: width .3s;
+}
+
+.nav-link:hover::after {
+width: 100%;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar {
+width: 5px;
+}
+
+::-webkit-scrollbar-track {
+background: var(--n7-dark);
+}
+
+::-webkit-scrollbar-thumb {
+background: rgba(0,180,255,.3);
+border-radius: 3px;
+}
+
+/* ---- Buttons ---- */
+.btn-primary {
+padding: .75rem 1.75rem;
+font-size: .875rem;
+font-weight: 600;
+border-radius: 9999px;
+color: #fff;
+background: linear-gradient(135deg,#0066FF,#00B4FF);
+border: none;
+cursor: pointer;
+}
+
+.btn-outline {
+padding: .75rem 1.75rem;
+font-size: .875rem;
+font-weight: 600;
+border-radius: 9999px;
+color: #fff;
+background: transparent;
+border: 1px solid rgba(255,255,255,.22);
+cursor: pointer;
+}
+
+.btn-outline:hover {
+background: rgba(255,255,255,.08);
+}
+
+/* ---- Gradient Text ---- */
+.gradient-text {
+background: linear-gradient(90deg,#00B4FF,#0066FF);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+.solutions-wrapper {
+flex-direction: column;
+gap: 60px;
+}
+
+.solutions-left,
+.solutions-right {
+width: 100%;
+}
+
+.solutions-grid {
+grid-template-columns: 1fr;
+gap: 50px;
+}
+}
